@@ -1,3 +1,7 @@
 <h1>
-  {{title}}
+	{{title}}
 </h1>
+
+<li *ngFor="let station of stations">
+	<span>{{station.name}} - {{station.zones.zone}}</span>
+</li>
