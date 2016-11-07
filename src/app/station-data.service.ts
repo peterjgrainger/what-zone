@@ -10,7 +10,7 @@ export class StationDataService {
   }
 
   getStations(): Promise<any> {
-    return this.http.get('/app/store/stations.json')
+    return this.http.get('/assets/stations.json')
       .toPromise()
       .then(result => result.json().Root.stations.station)
       .catch(this.handleError);
