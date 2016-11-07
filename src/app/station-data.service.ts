@@ -1,24 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import { StationData } from './station-data'
 
 
 @Injectable()
 export class StationDataService {
 
-  constructor(private http: Http) {
-  }
+  stationData = new StationData();
 
-  getStations(): Promise<any> {
-    return this.http.get('/assets/stations.json')
-      .toPromise()
-      .then(result => result.json().Root.stations.station)
-      .catch(this.handleError);
-  }
+  getStations(): Array<any> {
 
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
+    return this.stationData.stationData().Root.stations.station;
   }
-
 }

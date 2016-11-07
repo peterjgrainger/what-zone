@@ -18,10 +18,7 @@ export class AppComponent implements OnInit {
   constructor(private stationDataService: StationDataService) { }
 
   ngOnInit(): void {
-    this.stationDataService.getStations()
-      .then(stations => {
-        this.stations = stations.filter(station => station.zones);
-      });
+    this.stations = this.stationDataService.getStations();
   }
 
   stationSelected($event) {

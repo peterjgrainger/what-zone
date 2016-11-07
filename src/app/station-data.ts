@@ -1,4 +1,6 @@
-{
+export class StationData {
+    stationData() {
+        return {
    "Root": {
       "name": "Transport for London Stations facilities",
       "open": "0",
@@ -59643,4 +59645,6 @@
          ]
       }
    }
+}
+    }
 }
