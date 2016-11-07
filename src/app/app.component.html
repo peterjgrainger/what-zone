@@ -1,7 +1,29 @@
-<h1>
-	{{title}}
-</h1>
+<title>{{title}}</title>
 
-<li *ngFor="let station of stations">
-	<span>{{station.name}} - {{station.zones.zone}}</span>
-</li>
+<md-toolbar color="primary">
+	<md-icon>train</md-icon>
+	<span class="zone-text"> {{ title }} </span>
+</md-toolbar>
+
+<div class="app-content">
+	<p md-line>Which Zone is
+
+		<md-input placeholder="Station" [(ngModel)]=query (keyup)=filter()>
+			<span md-prefix>
+          <i class="material-icons app-input-icon">train</i>
+          &nbsp;
+        </span>
+		</md-input>
+		in?</p>
+
+	<div class="suggestions" *ngIf="filteredList.length > 0">
+		<button md-raised-button *ngFor="let item of filteredList"
+			(click)="select(item)">{{item.name}}
+		</button>
+	</div>
+
+	<md-card *ngIf="selectedStation">
+		<h2 class="zone-text" md-line>{{ selectedStation.name }} is in <strong>Zone {{ selectedStation.zones.zone }}</strong></h2>
+	</md-card>
+
+</div>
