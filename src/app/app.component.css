@@ -3,6 +3,10 @@ md-sidenav-layout.m2app-dark {
   background: black;
 }
 
+#icon {
+  padding: 0 14px 0 0
+}
+
 .app-content {
   padding: 20px;
 }
