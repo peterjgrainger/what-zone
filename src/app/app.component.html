@@ -17,13 +17,12 @@
 		in?</p>
 
 	<div class="suggestions" *ngIf="filteredList.length > 0">
-		<button md-raised-button *ngFor="let item of filteredList"
-			(click)="select(item)">{{item.name}}
+		<button md-raised-button *ngFor="let item of filteredList" (click)="select(item)">{{item.name}}
 		</button>
 	</div>
 
 	<md-card *ngIf="selectedStation">
-		<h2 class="zone-text" md-line>{{ selectedStation.name }} is in <strong>Zone {{ selectedStation.zones.zone }}</strong></h2>
+		<h2 class="zone-text" md-line>{{ selectedStation.name }} is in <strong>Zone {{ selectedStation.zone }}</strong></h2>
 	</md-card>
 
 </div>
